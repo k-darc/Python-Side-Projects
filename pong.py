@@ -65,6 +65,6 @@ while True:
     ball.setx(ball.xcor() + ball.dx)
     ball.sety(ball.ycor() + ball.dy)
 
-    if call.yxor() > 290:
+    if ball.ycor() > 290:
         ball.sety(290)
         ball.dy *= -1
