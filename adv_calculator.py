@@ -39,6 +39,9 @@ btn_2.grid(row=2, column=2)
 btn_plus = tk.Button(root, text="+", command=lambda: add_to_calculation("+"), width=5, font=("Arial", 14))
 btn_plus.grid(row=2, column=4)
 
+btn_clear = tk.Button(root, text="C", command=clear_field, width=11, font=("Arial", 14))
+btn_clear.grid(row=1, column=1, columnspan=1)
+
 btn_equals = tk.Button(root, text="=", command=evaluate_calculation, width=11, font=("Arial", 14))
 btn_equals.grid(row=6, column=3, columnspan=2)
 
