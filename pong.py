@@ -28,8 +28,8 @@ ball.shape("square")
 ball.color("white")
 ball.penup()
 ball.goto(0, 0)
-ball.dx = 0.25
-ball.dy = 0.25
+ball.dx = .5
+ball.dy = -.5
 
 def paddle_a_up():
     y = paddle_a.ycor()
@@ -67,4 +67,8 @@ while True:
 
     if ball.ycor() > 290:
         ball.sety(290)
+        ball.dy *= -1
+
+    if ball.ycor() < -290:
+        ball.sety(-290)
         ball.dy *= -1
