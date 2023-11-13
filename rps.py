@@ -24,3 +24,8 @@ while playing:
         print(f"You win!", player, "beats", computer)
     else:
         print("You have lost", computer, "beats", player)
+
+    if not input("Play again? (y/n): ").lower() == "y":
+        player = False
+
+print("Thanks for player!")
