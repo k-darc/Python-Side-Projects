@@ -2,8 +2,8 @@ import tkinter as tk
 
 LARGE_FONT_STYLE = ("Arial", 12)
 SMALL_FONT_STYLE = ("Arial", 12)
-BACK_COLOR = "#F5F5F5"
-DIGIT_COLOR = "#000000"
+LIGHT_GRAY = "#F5F5F5"
+LABEL_COLOR = "#000000"
 
 class Calculator:
     def __init__(self):
@@ -20,15 +20,15 @@ class Calculator:
         self.buttons_frame = self.create_buttons_frame()
 
     def create_display_labels(self):
-        total_label = tk.Label(self.display_frame, text=self.total_expression, anchor=tk.E, bg=BACK_COLOR, fg=DIGIT_COLOR, padx=20, font=SMALL_FONT_STYLE)
+        total_label = tk.Label(self.display_frame, text=self.total_expression, anchor=tk.E, bg=LIGHT_GRAY, fg=LABEL_COLOR, padx=20, font=SMALL_FONT_STYLE)
         total_label.pack(expand=True, fill="both")
 
-        label = tk.Label(self.display_frame, text=self.current_expression, anchor=tk.E, bg=BACK_COLOR, fg=DIGIT_COLOR, padx=20, font=LARGE_FONT_STYLE)
+        label = tk.Label(self.display_frame, text=self.current_expression, anchor=tk.E, bg=LIGHT_GRAY, fg=LABEL_COLOR, padx=20, font=LARGE_FONT_STYLE)
         label.pack(expand=True, fill="both")
         return total_label,label
 
     def create_display_frame(self):
-        frame = tk.Frame(self.window, height=100, bg=BACK_COLOR)
+        frame = tk.Frame(self.window, height=100, bg=LIGHT_GRAY)
         frame.pack(expand=True, fill="both")
         return frame #
 
