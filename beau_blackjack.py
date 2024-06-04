@@ -115,32 +115,70 @@ class Game:
             player_hand.display()
             dealer_hand.display()
 
-        def check_winner(self, player_hand, dealer_hand, game_over=False):
-            if not game_over:
-                if player_hand.get_value() > 21:
-                    print("You busted. Dealer wins! ")
-                    return True
-                elif dealer_hand.get_value() > 21:
-                    print("Dealer busted. YOU WIN!")
-                    return True
-                elif dealer_hand.is_blackjack() and player_hand.is_blackjack():
-                    print("Both players hand blacjack! TIE GAME!")
-                    return True
-                elif player_hand.is_blackjack():
-                    print("You have BlackJack. YOU WIN!")
-                    return True
-                elif dealer_hand.is_blackjack():
-                    print("Dealer has BlackJack! Dealer wins!")
-                    return True
-            else:
-                if player_hand.get_value() > dealer_hand.get_value():
-                    print("YOU WIN!")
-                elif player_hand.get_value() == dealer_hand.get_value():
-                    print("Tie Game")
-                else:
-                    print("Dealer wins.")
+            if self.check_winner(player_hand, dealer_hand):
+                continue
+
+            choice = ""
+            while player_hand.get_value() < 21 and choice not in ["s", "stand"]:
+                choice = input("Please choose 'Hit' or 'Stand': ").lower()
+                print()
+            while choice not in ["h", "s", "hit", "stand"]:
+                choice = input("Pleaser enter 'Hit' or 'Stand' (or H/S) ").lower()
+                print()
+            if choice in ["hit", "h"]:
+                player_hand.add_card(deck.deal())
+                player_hand.display()
+
+        if self.check_winner(player_hand, dealer_hand):
+            continue
+
+        player_hand_value = player_hand.get_value()
+        dealer_hand_value = dealer_hand.get_value()
+
+        while dealer_hand_value < 17:
+            dealer_hand.add_card(deck.deal())
+            dealer_hand_value = dealer_hand.get_value()
+
+        dealer_hand.display(show_all_dealer_cards=True)
+
+        if self.check_winner(player_hand, dealer_hand):
+            continue
+
+        print("Final Results")
+        print("your hand:", player_hand_value)
+        print("Dealer's hand:", dealer_hand_value)
+
+        self.check_winner(player_hand, dealer_hand, True)
+        
+        print("\nThanks for player!")
+
+
+    def check_winner(self, player_hand, dealer_hand, game_over=False):
+        if not game_over:
+            if player_hand.get_value() > 21:
+                print("You busted. Dealer wins! ")
                 return True
-            return False
+            elif dealer_hand.get_value() > 21:
+                print("Dealer busted. YOU WIN!")
+                return True
+            elif dealer_hand.is_blackjack() and player_hand.is_blackjack():
+                print("Both players hand blacjack! TIE GAME!")
+                return True
+            elif player_hand.is_blackjack():
+                print("You have BlackJack. YOU WIN!")
+                return True
+            elif dealer_hand.is_blackjack():
+                print("Dealer has BlackJack! Dealer wins!")
+                return True
+        else:
+            if player_hand.get_value() > dealer_hand.get_value():
+                print("YOU WIN!")
+            elif player_hand.get_value() == dealer_hand.get_value():
+                print("Tie Game")
+            else:
+                print("Dealer wins.")
+            return True
+        return False
 
 g = Game()
 g.play()
