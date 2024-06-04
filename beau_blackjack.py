@@ -1,33 +1,34 @@
 import random
 
-class = Deck:
-    cards = []
-    suits = ["spades", "clubs", "hearts", "diamonds"]
-    ranks = [
-            {"rank": "Ace", "value": 11},
-            {"rank": "2", "value": 2},
-            {"rank": "3", "value": 3},
-            {"rank": "4", "value": 4},
-            {"rank": "5", "value": 5},
-            {"rank": "6", "value": 6},
-            {"rank": "7", "value": 7},
-            {"rank": "8", "value": 8},
-            {"rank": "9", "value": 9},
-            {"rank": "10", "value": 10},
-            {"rank": "10", "value": 10},
-            {"rank": "10", "value": 10},
-            {"rank": "10", "value": 10},
-    ]
-    for suit in suits:
-        for rank in ranks:
-            cards.append([suit, rank])
+class Deck:
+    def __init__(self):
+        self.cards = []
+        suits = ["spades", "clubs", "hearts", "diamonds"]
+        ranks = [
+                {"rank": "Ace", "value": 11},
+                {"rank": "2", "value": 2},
+                {"rank": "3", "value": 3},
+                {"rank": "4", "value": 4},
+                {"rank": "5", "value": 5},
+                {"rank": "6", "value": 6},
+                {"rank": "7", "value": 7},
+                {"rank": "8", "value": 8},
+                {"rank": "9", "value": 9},
+                {"rank": "10", "value": 10},
+                {"rank": "10", "value": 10},
+                {"rank": "10", "value": 10},
+                {"rank": "10", "value": 10},
+            ]
+        for suit in suits:
+            for rank in ranks:
+                self.cards.append([suit, rank])
 
-    def shuffle():
-        random.shuffle(cards)
+    def shuffle(self):
+        random.shuffle(self.cards)
 
-    def deal(number):
+    def deal(self, number):
         cards_dealt = []
         for x in range(number):
-            card = cards.pop()
+            card = self.cards.pop()
             cards_dealt.append(card)
         return cards_dealt
