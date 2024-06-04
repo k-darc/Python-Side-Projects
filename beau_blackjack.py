@@ -42,3 +42,5 @@ class Deck:
                 cards_dealt.append(card)
         return cards_dealt
 
+card1 = Card("hearts", {"rank": "J", "value": 10})
+print(card1)
