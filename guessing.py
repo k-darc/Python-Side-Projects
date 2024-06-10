@@ -19,3 +19,15 @@ while True:
     else:
         print(f"Congratulations! You guesses {number} in {number_of_guesses}!")
         break
+
+# Restart
+
+restart = input("Do you want to play again (Y/N): ")
+
+if restart != "y":
+    print("Thank you for playing!")
+    break
+else:
+    number = random.randint(1,100)
+    number_of_guesses = 0
+    print("I've picked a new number! Let's play again!")
