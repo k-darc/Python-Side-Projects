@@ -1,15 +1,15 @@
 import math
 
-def calculate(rad):
-    return math.pi * rad ** 2
+def calculate(radius):
+    return math.pi * radius ** 2
 
-def calculate_volume(rad,hgt):
-    base = calculate_area(rad)
-    return base * hgt
+def calculate_volume(radius, height):
+    base = calculate_area(radius)
+    return base * height
 
 def main():
-    rad = float(input("Enter the Radius: "))
-    hgt = float(input("Enter the Height: "))
+    radius = float(input("Enter the Radius: "))
+    height = float(input("Enter the Height: "))
 
 
 
