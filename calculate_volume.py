@@ -18,7 +18,7 @@ def main():
         area = calculate_area(radius)
         volume = calculate_volume(radius, height)
 
-        print("The area of the cylinder is: {area:.2f}")
+        print(f"The area of the cylinder is: {area:.2f}")
         print(f"The volume of the cylinder is: {volume:.2f}")
 
     except ValueError as ve:
