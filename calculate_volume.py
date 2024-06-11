@@ -4,12 +4,10 @@ def calculate(radius):
     return math.pi * radius ** 2
 
 def calculate_volume(radius, height):
-    base = calculate_area(radius)
-    return base * height
+    base_area = calculate_area(radius)
+    return base_area * height
 
 def main():
-    radius = float(input("Enter the Radius: "))
-    height = float(input("Enter the Height: "))
-
-
-
+    try:
+        radius = float(input("Enter the Radius: "))
+        height = float(input("Enter the Height: "))
