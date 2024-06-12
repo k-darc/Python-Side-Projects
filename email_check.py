@@ -6,9 +6,16 @@ def valid_email(email):
 
 def main():
     while True:
-        email = input("Enter your email")
+        email = input("Enter your email: ")
 
-        if not emial.strip():
+        if not email.strip():
             print("Invalid Email")
+            continue
+
+        if valid_email(email):
+            print("Email address is valid!")
+            break
+        else:
+            print("Invalid Email - try again")
             continue
 main()
