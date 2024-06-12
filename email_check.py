@@ -16,6 +16,8 @@ def main():
             print("Email address is valid!")
             break
         else:
-            print("Invalid Email - try again")
+            print("Invalid Email - try again...")
             continue
-main()
+
+if __name__ == "__main__":
+    main()
