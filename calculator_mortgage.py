@@ -7,10 +7,11 @@ def calculate_months_to_payoff(mortgage_value, interest_rate, term_years):
     return months_to_payoff
 
 def main():
-    mortgage_value = input("Enter remaining value of your mortgage: $")
-    interest_rate = input("Enter your interest rate as a percentage: ")
-    term_years = input("Enter the term of your mortgage: ")
+    mortgage_value = float(input("Enter remaining value of your mortgage: $"))
+    interest_rate = float(input("Enter your interest rate as a percentage: "))
+    term_years = int(input("Enter the term of your mortgage (years): "))
     months_to_payoff = calculate_months_to_payoff(mortgage_value, interest_rate, term_years)
-    print("It will take approzimately {} months to payoff your mortgage.".format(months_to_payoff))
+    print("It will take approximately {} months to payoff your mortgage.".format(months_to_payoff))
 
-main()
+if __name__ == "__main__":
+    main()
