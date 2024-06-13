@@ -1,9 +1,9 @@
 import random
 
 def main():
-    print("QUIZ!")
-    print("Answer the questions")
-    print()
+    print("Welcome to the Harry Potter Quiz!")
+    print("Answer 5 questions by typing in the correct number and hitting Enter.")
+    print("Let's start!")
     quiz()
 
 questions = {
