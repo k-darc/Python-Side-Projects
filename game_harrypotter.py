@@ -67,8 +67,6 @@ questions = {
     "What is the name of the dragon that Harry faces in the Triwizard Tournament?": {"correct": "Hungarian Horntail", "options": ["Hungarian Horntail", "Norwegian Ridgeback", "Swedish Short-Snout", "Chinese Fireball"]},
     "What is the name of the spell that unlocks doors?": {"correct": "Alohomora", "options": ["Alohomora", "Accio", "Expelliarmus", "Expecto Patronum"]},
     "What is the name of the creature that guards the entrance to Gryffindor Tower?": {"correct": "The Fat Lady", "options": ["The Fat Lady", "The Grey Lady", "Nearly Headless Nick", "The Bloody Baron"]},
-
-
 }
 
 def select_questions():
@@ -94,8 +92,6 @@ def quiz():
     percentage = (correct_answers / total_questions) * 100
     print(f"\nYou got {correct_answers} out of {total_questions} questions correct.")
     print(f"Your score: {percentage:.2f} %")
-
-
 
 if __name__ == "__main__":
     main()
