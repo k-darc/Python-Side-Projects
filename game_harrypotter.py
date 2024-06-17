@@ -62,7 +62,7 @@ questions = {
     "What is the name of the organization founded by Albus Dumbledore to fight Voldemort?": {"correct": "The Order of the Phoenix", "options": ["The Order of the Phoenix", "The Death Eaters", "Dumbledore's Army", "The Ministry of Magic"]},
     "What enchanted objects does Dumbledore's Army use to communicate?": {"correct": "Coins", "options": ["Coins", "Letters", "Remembralls", "Buttons"]},
     "What is the name of the device used to travel back in time?": {"correct": "Time-Turner", "options": ["Time-Turner", "Portkey", "Apparition", "Floo Powder"]},
-    "What is the name of the object used to contain a fragment of the owners soul?": {"correct": "Horcrux", "options": ["Horcrux", "Portkey", "Pensieve", "Deluminator"]},
+    "What is the name of the object used to contain a fragment of the owner's soul?": {"correct": "Horcrux", "options": ["Horcrux", "Portkey", "Pensieve", "Deluminator"]},
     "Who runs the Wizard bank in London?": {"correct": "Goblins", "options": ["Goblins", "Dwarfs", "Elves", "Muggles"]},
     "What is the name of the dragon that Harry faces in the Triwizard Tournament?": {"correct": "Hungarian Horntail", "options": ["Hungarian Horntail", "Norwegian Ridgeback", "Swedish Short-Snout", "Chinese Fireball"]},
     "What is the name of the spell that unlocks doors?": {"correct": "Alohomora", "options": ["Alohomora", "Accio", "Expelliarmus", "Expecto Patronum"]},
@@ -85,7 +85,15 @@ def quiz():
         for i, option in enumerate(options):
             print(f"{i+1}. {option}")
 
-        users_answer = int(input("Enter your answer (1-4): \n"))
+        while True:
+            try:
+                users_answer = int(input("Enter your answer (1-4): \n"))
+                if users_answer not in [1, 2, 3, 4]:
+                    raise ValueError("INVALID INPUT! Please enter a number between 1 and 4.")
+                break
+            except ValueError as e:
+                print(e)
+
         if options[users_answer-1] == selected_questions[question]["correct"]:
             correct_answers += 1
 
